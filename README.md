@@ -49,9 +49,6 @@ Buka link local server di browser
 **Server:** PHP 7+, Mysql, Codeigniter 3
 
 
-## Authors
-
-- [@firdanx](https://www.github.com/firdanx)
 ## Roadmap
 
 - Login & Register
@@ -64,3 +61,6 @@ Buka link local server di browser
 - Laporan
 
 
+## Authors
+
+- [@firdanx](https://www.github.com/firdanx)
