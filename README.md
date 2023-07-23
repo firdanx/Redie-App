@@ -52,4 +52,15 @@ Buka link local server di browser
 ## Authors
 
 - [@firdanx](https://www.github.com/firdanx)
+## Roadmap
+
+- Login & Register
+- Pengelolaan Data Pasien
+- Pengelolaan Data Dokter
+- Pengelolaan Data Poliklinik
+- Pengelolaan Data Obat
+- Pengelolaan Pendaftaran
+- Pengelolaan Nomor Antrian
+- Laporan
+
 
