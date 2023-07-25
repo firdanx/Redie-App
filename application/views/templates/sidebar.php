@@ -1,3 +1,6 @@
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -87,10 +90,10 @@
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
-                    </li>
                         <a class="collapse-item active" href="blank.html">Blank Page</a>
                     </div>
                 </div>
+            </li>
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -116,10 +119,3 @@
 
         </ul>
         <!-- End of Sidebar -->
-
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
