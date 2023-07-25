@@ -24,6 +24,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -52,7 +53,13 @@
     <script src="<?=base_url('assets/sbadmin/vendor/jquery-easing/jquery.easing.min.js');?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?=base_url('assets/sbadmin/js/sb-admin-2.min.js')?>"></script>
+    <script src="<?=base_url('assets/sbadmin/js/sb-admin-2.min.js');?>"></script>
+
+    <script src="<?=base_url('assets/sbadmin/vendor/datatables/jquery.dataTables.min.js');?>"></script>
+    <script src="<?=base_url('assets/sbadmin/vendor/datatables/dataTables.bootstrap4.min.js');?>"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?=base_url('assets/sbadmin/js/demo/datatables-demo.js');?>"></script>
 
 </body>
 

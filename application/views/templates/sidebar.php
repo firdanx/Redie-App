@@ -5,7 +5,7 @@
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?=base_url('dashboard');?>">
                 <div class="sidebar-brand-icon my-4">
                     <img class="img-thumbnail bg-transparent border-0" src="<?=base_url('assets/img/RedieApp.png');?>" alt="">
                 </div>
@@ -16,7 +16,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?=base_url('dashboard');?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -54,7 +54,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Pasien:</h6>
                         <a class="collapse-item" href="buttons.html">Tambah Pasien</a>
-                        <a class="collapse-item" href="cards.html">Data Pasien</a>
+                        <a class="collapse-item" href="cards.html">Data Pasien Baru</a>
+                        <a class="collapse-item" href="cards.html">Data Pasien Lama</a>
                     </div>
                 </div>
             </li>
@@ -111,8 +112,8 @@
                 <div id="collapspoliklinik" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Poliklinik:</h6>
-                        <a class="collapse-item" href="buttons.html">Tambah Poliklinik</a>
-                        <a class="collapse-item" href="cards.html">Data Poliklinik</a>
+                        <a class="collapse-item" href="<?=base_url('poliklinik/tambahPoliklinik');?>">Tambah Poliklinik</a>
+                        <a class="collapse-item" href="<?=base_url('poliklinik');?>">Data Poliklinik</a>
                     </div>
                 </div>
             </li>
