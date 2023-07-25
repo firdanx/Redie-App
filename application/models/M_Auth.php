@@ -24,4 +24,9 @@ class M_Auth extends CI_Model {
 		$query = $this->db->get('tbaccount')->row();
 		return password_verify($password, $query->password);
 	}
+	public function get_profile_pic($username){
+		$this->db->where('username', $username);
+		$query = $this->db->get('tbaccount')->row();
+		return $query->account_pic;
+	}
 }

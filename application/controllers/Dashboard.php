@@ -7,10 +7,14 @@ class Dashboard extends CI_Controller {
     {
         parent::__construct();
         is_logged_in();
+        $this->load->model('M_Common');
     }
 	public function index()
 	{
+        $username = $this->session->userdata('username');
         $data['title'] = 'Dashboard';
+        $data['username'] = $username;
+        $data['profile_pic'] = $this->M_Common->get_profile_pic($username);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
