@@ -8,7 +8,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>&copy; Redie App 2023</span>
                     </div>
                 </div>
             </footer>
@@ -44,7 +44,6 @@
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="<?=base_url('assets/sbadmin/vendor/jquery/jquery.min.js');?>"></script>
     <script src="<?=base_url('assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>

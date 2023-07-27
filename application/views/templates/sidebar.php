@@ -112,7 +112,6 @@
                 <div id="collapspoliklinik" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Poliklinik:</h6>
-                        <a class="collapse-item" href="<?=base_url('poliklinik/tambahPoliklinik');?>">Tambah Poliklinik</a>
                         <a class="collapse-item" href="<?=base_url('poliklinik');?>">Data Poliklinik</a>
                     </div>
                 </div>

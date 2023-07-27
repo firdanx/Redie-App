@@ -9,4 +9,7 @@ class M_Poliklinik extends CI_Model {
         $this->db->where('id_poliklinik',$id_poliklinik);
         $this->db->delete('tbpoliklinik');
     }
+    public function add_poliklinik($data){
+        $this->db->insert('tbpoliklinik',$data);
+    }
 }
