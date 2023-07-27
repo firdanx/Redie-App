@@ -69,4 +69,34 @@ class Poliklinik extends CI_Controller {
             $this->load->view('templates/footer');
         }
     }
+    public function editPoliklinik($id_poliklinik){
+        $this->form_validation->set_rules('kodePoliklinik', 'Kode Poliklinik', 'trim|required',
+		array(
+			'required' => 'Kode Poliklinik harus di isi'
+		));
+        $this->form_validation->set_rules('ruangPoliklinik', 'Ruang Poliklinik', 'trim|required',
+		array(
+			'required' => 'Ruang Poliklinik harus di isi'
+		));
+        $this->form_validation->set_rules('namaPoliklinik', 'Nama Poliklinik', 'trim|required',
+		array(
+			'required' => 'Nama Poliklinik harus di isi'
+		));
+        if($this->form_validation->run()){
+            $kodePoliklinik = $this->input->post('kodePoliklinik');
+            $ruangPoliklinik = $this->input->post('ruangPoliklinik');
+            $namaPoliklinik = $this->input->post('namaPoliklinik');
+            $data = array(
+                'kode_poliklinik' => $kodePoliklinik,
+                'ruang_poliklinik' => $ruangPoliklinik,
+                'nama_poliklinik' => $namaPoliklinik
+            );
+            $this->M_Poliklinik->edit_poliklinik($data, $id_poliklinik);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Poliklinik berhasil diubah!</div>');
+            redirect('poliklinik');
+        }else{
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Gagal mengubah data poliklinik!!</div>');
+            redirect('poliklinik');
+        }
+    }
 }

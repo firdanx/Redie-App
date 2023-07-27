@@ -12,4 +12,8 @@ class M_Poliklinik extends CI_Model {
     public function add_poliklinik($data){
         $this->db->insert('tbpoliklinik',$data);
     }
+    public function edit_poliklinik($data,$id_poliklinik){
+            $this->db->where('id_poliklinik',$id_poliklinik);
+            $this->db->update('tbpoliklinik',$data);
+        }
 }
