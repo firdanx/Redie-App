@@ -97,8 +97,7 @@
                 <div id="collapsdokter" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Dokter:</h6>
-                        <a class="collapse-item" href="buttons.html">Tambah Dokter</a>
-                        <a class="collapse-item" href="cards.html">Data Dokter</a>
+                        <a class="collapse-item" href="<?=base_url('dokter')?>">Data Dokter</a>
                     </div>
                 </div>
             </li>
