@@ -11,6 +11,7 @@ Aplikasi Rekam Medis Elektronik Berbasis Web ini dibangun menggunakan Framework 
 - Pengelolaan Data Obat
 - Pengelolaan Pendaftaran
 - Pengelolaan Nomor Antrian
+- Ketersediaan Dokter
 - Laporan
 
 
@@ -52,6 +53,7 @@ Buka link local server di browser
 - Nomer Antrian
 - Riwayat Berobat
 - Kartu Rekam Medis Elektronik
+- Ketersediaan Dokter
 
 
 ## Tech Stack
