@@ -6,8 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $is_logged_in = $CI->session->userdata('logged_in');
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
-            echo 'You don\'t have permission to access this page.';
-            die();      
+            redirect(base_url());
             //$this->load->view('login_form');
         } 
     }

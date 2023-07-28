@@ -18,6 +18,7 @@
                                         <p class="h5 text-gray-600 mb-4">Selamat Datang!</p>
                                     </div>
                                     <form class="user" method="post" action="<?=base_url('auth');?>">
+                                        <?=$this->session->flashdata('suksesganti');?>
                                         <?=$this->session->flashdata('success');?>
                                         <?=$this->session->flashdata('failed');?>
                                         <div class="form-group">

@@ -44,6 +44,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="<?=base_url('assets/sbadmin/vendor/jquery/jquery.min.js');?>"></script>
     <script src="<?=base_url('assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
@@ -59,7 +61,7 @@
 
     <!-- Page level custom scripts -->
     <script src="<?=base_url('assets/sbadmin/js/demo/datatables-demo.js');?>"></script>
-
+    <script src="<?=base_url('assets/js/script.js');?>"></script>
 </body>
 
 </html>
