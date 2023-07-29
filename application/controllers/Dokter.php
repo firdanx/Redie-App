@@ -76,6 +76,43 @@ class Dokter extends CI_Controller {
         }
     }
 
+    public function editDokter($id_dokter){
+        $this->form_validation->set_rules('nip_dokter', 'NIP Dokter', 'trim|required',
+		array(
+			'required' => 'NIP Dokter harus di isi'
+		));
+        $this->form_validation->set_rules('nama_dokter', 'Nama Dokter', 'trim|required',
+		array(
+			'required' => 'Nama Dokter harus di isi'
+		));
+        $this->form_validation->set_rules('telp_dokter', 'No Telepon Dokter', 'trim|required',
+		array(
+			'required' => 'No Telepon Dokter harus di isi'
+		));
+        $this->form_validation->set_rules('spesialis_dokter', 'Spesialis Dokter', 'trim|required',
+		array(
+			'required' => 'Spesialis Dokter harus di isi'
+		));
+        $this->form_validation->set_rules('id_poliklinik', 'Poliklinik', 'trim|required',
+		array(
+			'required' => 'Poliklinik harus di pilih'
+		));
+        if($this->form_validation->run()){
+            $data = array(
+            'nip_dokter' => $this->input->post('nip_dokter'),
+            'nama_dokter' => $this->input->post('nama_dokter'),
+            'telp_dokter' => $this->input->post('telp_dokter'),
+            'spesialis_dokter' => $this->input->post('spesialis_dokter'),
+            'id_poliklinik' => $this->input->post('id_poliklinik')
+            );
+            $this->M_Dokter->edit_Dokter($id_dokter, $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah data dokter!</div>');
+            redirect('dokter');
+        }else{
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gagal melakukan edit data! Pastikan melakukan pengisian data dengan benar!</div>');
+            redirect('dokter');
+        }
+    }
     
     public function delete($id_dokter){
         $this->M_Dokter->delete_Dokter($id_dokter);

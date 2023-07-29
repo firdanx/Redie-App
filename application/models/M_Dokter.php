@@ -15,4 +15,8 @@ class M_Dokter extends CI_Model {
     $this->db->where('id_dokter',$id_Dokter);
     $this->db->delete('tbdokter');
     }
+    public function edit_Dokter($id_dokter, $data){
+        $this->db->where('id_dokter',$id_dokter);
+        $this->db->update('tbdokter',$data);
+    }
 }
