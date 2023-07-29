@@ -41,23 +41,24 @@ class Dokter extends CI_Controller {
 		array(
 			'required' => 'Spesialis Dokter harus di isi'
 		));
-        $this->form_validation->set_rules('checkPoli', 'Poliklinik','callback_checkPoli');
+        $this->form_validation->set_rules('id_poliklinik', 'Poliklinik', 'trim|required',
+		array(
+			'required' => 'Poliklinik harus di pilih'
+		));
         if($this->form_validation->run()){
             $nip = $this->input->post('nip_dokter');
             $nama_dokter = $this->input->post('nama_dokter');
             $telp_dokter = $this->input->post('telp_dokter');
             $spesialis_dokter = $this->input->post('spesialis_dokter');
-            $poli = $this->input->post('checkPoli');
-            for($i = 0; $i <count($poli); $i++){
+            $poli = $this->input->post('id_poliklinik');
                 $data = array(
                 'nip_dokter' => $nip,
                 'nama_dokter' => $nama_dokter,
                 'telp_dokter' => $telp_dokter,
                 'spesialis_dokter' => $spesialis_dokter,
-                'id_poliklinik' => $poli[$i]
+                'id_poliklinik' => $poli
             );
             $this->M_Dokter->add_Dokter($data);
-            }
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil menambah Dokter</div>');
             redirect('dokter');
         }else{
@@ -81,19 +82,4 @@ class Dokter extends CI_Controller {
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil menghapus Dokter</div>');
         redirect('dokter');
     }
-
-    function checkPoli()
-	{
-		//if (isset($_POST['accept_terms_checkbox']))
-            if ($this->input->post('checkPoli'))
-		{
-			return TRUE;
-		}
-		else
-		{
-			$error = 'Pilih setidaknya satu Poliklinik';
-			$this->form_validation->set_message('checkPoli', $error);
-			return FALSE;
-		}
-	}
 }

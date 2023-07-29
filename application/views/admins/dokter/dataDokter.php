@@ -26,7 +26,7 @@
                             <?php foreach ($dokter as $d) :?>
                                 <tr>
                                     <td class="text-center"><?= $d['nip_dokter'];?></td>
-                                    <td class="text-center"><?= $d['nama_dokter'];?></td>
+                                    <td><?= $d['nama_dokter'];?></td>
                                     <td><?= $d['telp_dokter'];?></td>
                                     <td><?= $d['spesialis_dokter'];?></td>
                                     <td><?= $d['nama_poliklinik'];?></td>
@@ -78,14 +78,12 @@
                         <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('spesialis_dokter'); ?></small></div>
                     </div>
                     <div class="form-group">
-                        <label for="spesialis_dokter">Poliklinik</label>
-                        <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('checkPoli'); ?></small></div>
+                        <label for="poliklinik">Poliklinik</label>
+                        <select class="form-control" id="poliklinik" name="id_poliklinik">
                         <?php foreach ($poliklinik as $p) :?>
-                        <div class="form-check form-check">
-                            <input class="form-check-input" type="checkbox" name="checkPoli[]" value="<?=$p['id_poliklinik']?>">
-                            <label class="form-check-label" for="inlineCheckbox1"><?=$p['nama_poliklinik'];?></label>
-                        </div>
+                        <option value="<?=$p['id_poliklinik'];?>"><?=$p['nama_poliklinik'];?></option>
                         <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary btn-icon-split">
@@ -101,34 +99,47 @@
     </div>
 </div>
     <!-- Edit Modal-->
-<!-- <?php foreach ($dokter as $d) :?>
-    <div class="modal fade" id="editModal<?= $p['kode_poliklinik'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<?php foreach ($dokter as $d) :?>
+    <div class="modal fade" id="editModal<?= $d['id_dokter'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit <?=$p['nama_poliklinik'];?></h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Edit <?=$d['nama_dokter'];?></h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?=form_open('poliklinik/editPoliklinik/'. $p['id_poliklinik'])?>
-                        <div class="form-group">
-                            <label for="kodePoliklinik">Kode</label>
-                            <input type="text" class="form-control" id="kodePoliklinik" name="kodePoliklinik" value="<?=$p['kode_poliklinik'];?>" placeholder="Kode">
-                            <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('kodePoliklinik'); ?></small></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="ruangPoliklinik">Ruang Poliklinik</label>
-                            <input type="text" class="form-control" id="ruangPoliklinik" name="ruangPoliklinik" value="<?=$p['ruang_poliklinik'];?>" placeholder="Ruang Poliklinik">
-                            <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('ruangPoliklinik'); ?></small></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="namaPoliklinik">Nama Poliklinik</label>
-                            <input type="text" class="form-control" id="namaPoliklinik" name="namaPoliklinik" value="<?=$p['nama_poliklinik'];?>" placeholder="Nama Poliklinik">
-                            <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('namaPoliklinik'); ?></small></div>
-                        </div>
+                    <?=form_open('dokter/editDokter/'. $d['id_dokter'])?>
+                    <div class="form-group">
+                        <label for="nip_dokter">NIP</label>
+                        <input type="text" class="form-control" id="nip_dokter" name="nip_dokter" value="<?=$d['nip_dokter'];?>" placeholder="NIP Dokter">
+                        <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('nip_dokter'); ?></small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama_dokter">Nama</label>
+                        <input type="text" class="form-control" id="nama_dokter" name="nama_dokter" value="<?=$d['nama_dokter'];?>" placeholder="Nama">
+                        <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('nama_dokter'); ?></small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="telp_dokter">Telepon</label>
+                        <input type="text" class="form-control" id="telp_dokter" name="telp_dokter" value="<?=$d['telp_dokter'];?>" placeholder="Telepon">
+                        <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('telp_dokter'); ?></small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="spesialis_dokter">Spesialis</label>
+                        <input type="text" class="form-control" id="spesialis_dokter" name="spesialis_dokter" value="<?=$d['spesialis_dokter'];?>" placeholder="Spesialis">
+                        <div class="ml-4 mt-2"><small class="text-danger"><?php echo form_error('spesialis_dokter'); ?></small></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="poliklinik">Poliklinik</label>
+                        <select class="form-control" id="poliklinik" name="id_poliklinik">
+                        <?php foreach ($poliklinik as $p) :?>
+                        <option value="<?=$p['id_poliklinik'];?>" <?php if($p['id_poliklinik'] == $d['id_poliklinik']) echo 'selected';?>><?=$p['nama_poliklinik'];?></option>
+                        <?php endforeach; ?>
+                        </select>
+                    </div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -143,7 +154,7 @@
             </div>
         </div>
     </div>
-<?php endforeach;?> -->
+<?php endforeach;?>
     <!-- Hapus Modal-->
 <?php foreach ($dokter as $d) :?>
     <div class="modal fade" id="hapusModal<?= $d['id_dokter'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
