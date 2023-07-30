@@ -53,34 +53,12 @@
                 <div id="collapspasien" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Kelola Pasien:</h6>
-                        <a class="collapse-item" href="buttons.html">Tambah Pasien</a>
-                        <a class="collapse-item" href="cards.html">Data Pasien Baru</a>
-                        <a class="collapse-item" href="cards.html">Data Pasien Lama</a>
+                        <a class="collapse-item" href="<?=base_url('pasien/pasien_baru');?>">Data Pasien Baru</a>
+                        <a class="collapse-item" href="<?=base_url('pasien/pasien_lama');?>">Data Pasien Lama</a>
                     </div>
                 </div>
             </li>
             <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-               Resep & Obat
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsobat"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-capsules"></i>
-                    <span>Obat</span>
-                </a>
-                <div id="collapsobat" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Kelola Obat:</h6>
-                        <a class="collapse-item" href="cards.html">Data Obat</a>
-                    </div>
-                </div>
-            </li>
             <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">

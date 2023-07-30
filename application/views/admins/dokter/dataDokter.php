@@ -1,13 +1,13 @@
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Data Poliklinik</h1>
-<p class="mb-4">Data poliklinik berisi Kode, Ruang, dan Nama Poliklinik</a>.</p>
+<h1 class="h3 mb-2 text-gray-800">Data Dokter</h1>
+<p class="mb-4">Data dokter berisi informasi spesialisasi dokter</a>.</p>
 <?=$this->session->flashdata('message');?>
 <div class="row">
     <div class="col">
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Poliklinik</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Dokter</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
