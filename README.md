@@ -8,7 +8,6 @@ Aplikasi Rekam Medis Elektronik Berbasis Web ini dibangun menggunakan Framework 
 - Pengelolaan Data Pasien
 - Pengelolaan Data Dokter
 - Pengelolaan Data Poliklinik
-- Pengelolaan Data Obat
 - Pengelolaan Pendaftaran
 - Pengelolaan Nomor Antrian
 - Ketersediaan Dokter
@@ -49,7 +48,6 @@ Buka link local server di browser
 - Data Pasien Lama & Pasien Baru
 - Data Dokter
 - Data Poliklinik
-- Data Obat
 - Nomer Antrian
 - Riwayat Berobat
 - Kartu Rekam Medis Elektronik
