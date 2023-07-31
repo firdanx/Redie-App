@@ -25,9 +25,10 @@ class Dokter extends CI_Controller {
         $this->load->view('templates/footer');
     }
     public function tambahDokter(){
-        $this->form_validation->set_rules('nip_dokter', 'NIP Dokter', 'trim|required',
+        $this->form_validation->set_rules('nip_dokter', 'NIP Dokter', 'trim|required|is_unique[tbdokter.nip_dokter]',
 		array(
-			'required' => 'NIP Dokter harus di isi'
+			'required' => 'NIP Dokter harus di isi',
+            'is_unique' => 'NIP Dokter sudah terdaftar'
 		));
         $this->form_validation->set_rules('nama_dokter', 'Nama Dokter', 'trim|required',
 		array(
@@ -98,18 +99,24 @@ class Dokter extends CI_Controller {
 			'required' => 'Poliklinik harus di pilih'
 		));
         if($this->form_validation->run()){
-            $data = array(
-            'nip_dokter' => $this->input->post('nip_dokter'),
-            'nama_dokter' => $this->input->post('nama_dokter'),
-            'telp_dokter' => $this->input->post('telp_dokter'),
-            'spesialis_dokter' => $this->input->post('spesialis_dokter'),
-            'id_poliklinik' => $this->input->post('id_poliklinik')
+            $nip_dokter = $this->input->post('nip_dokter');
+            if($this->M_Dokter->is_nip_unique($id_dokter, $nip_dokter)){
+                $data = array(
+                'nip_dokter' => $nip_dokter,
+                'nama_dokter' => $this->input->post('nama_dokter'),
+                'telp_dokter' => $this->input->post('telp_dokter'),
+                'spesialis_dokter' => $this->input->post('spesialis_dokter'),
+                'id_poliklinik' => $this->input->post('id_poliklinik')
             );
-            $this->M_Dokter->edit_Dokter($id_dokter, $data);
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil mengubah data dokter!</div>');
-            redirect('dokter');
+                $this->M_Dokter->edit_Dokter($id_dokter, $data);
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Dokter berhasil diubah!</div>');
+                redirect('dokter');
+            }else{
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>NIP Sudah terdaftar!</div>');
+                redirect('dokter');
+            }
         }else{
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Gagal melakukan edit data! Pastikan melakukan pengisian data dengan benar!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Gagal mengubah data dokter!</div>');
             redirect('dokter');
         }
     }

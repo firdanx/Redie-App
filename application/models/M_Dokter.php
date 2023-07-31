@@ -19,4 +19,14 @@ class M_Dokter extends CI_Model {
         $this->db->where('id_dokter',$id_dokter);
         $this->db->update('tbdokter',$data);
     }
+    public function is_nip_unique($id_dokter, $nip_dokter){
+        $this->db->where('id_dokter!=', $id_dokter);
+        $this->db->where('nip_dokter', $nip_dokter);
+        $query = $this->db->get('tbdokter');
+        if($query->num_rows() > 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
