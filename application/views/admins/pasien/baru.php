@@ -20,7 +20,7 @@
                 <tbody>
                     <?php foreach ($pasien_baru as $pb) :?>
                         <tr>
-                            <td class="text-center"><?= $pb['no_rm'];?></td>
+                            S<td class="text-center">RM-<?=implode("-", str_split(str_pad($pb['no_rm'], 6, '0', STR_PAD_LEFT), 2))?></td>
                             <td class="text-center"><?= $pb['nama_pasien'];?></td>
                             <td class="text-center"><?= $pb['alamat_pasien'];?></td>
                             <td class="text-center"><?= $pb['telp_pasien'];?></td>
