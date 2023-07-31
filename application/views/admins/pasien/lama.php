@@ -43,3 +43,23 @@
         </div>
     </div>
 </div>
+<?php foreach ($pasien_lama as $pl) :?>
+    <div class="modal fade" id="hapusModal<?= $pl['id_pasien'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Yakin untuk menghapus Pasien <?= $pl['nama_pasien'];?>?</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-danger" href="<?= base_url('pasien/delete_pasien_baru/'. $pl['id_pasien']);?>">Hapus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endforeach;?>
