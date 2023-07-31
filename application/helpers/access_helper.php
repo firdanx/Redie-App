@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $is_logged_in = $CI->session->userdata('logged_in');
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
+            $CI->session->set_flashdata('failed', '<div class="alert alert-danger mb-2 text-center" role="alert">Silahkan Login terlebih dahulu!!!</div>');
             redirect(base_url());
             //$this->load->view('login_form');
         } 
