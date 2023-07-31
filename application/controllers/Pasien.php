@@ -49,6 +49,7 @@ class Pasien extends CI_Controller {
     }
 
     public function edit($id_pasien){
+        if(!$this->input->post()){
         $username = $this->session->userdata('username');
         $data['title'] = 'Edit Pasien';
         $data['username'] = $username;
@@ -59,6 +60,23 @@ class Pasien extends CI_Controller {
         $this->load->view('templates/topbar');
         $this->load->view('admins/pasien/edit');
         $this->load->view('templates/footer');
+        }else{
+            $data = array(
+                'no_rm' => $this->input->post('no_rm'),
+                'nik_pasien' => $this->input->post('nik_pasien'),
+                'nama_pasien' => $this->input->post('nama_pasien'),
+                'alamat_pasien' => $this->input->post('alamat_pasien'),
+                'tempat_lahir' => $this->input->post('tempat_lahir'),
+                'tgl_lahir' => $this->input->post('tgl_lahir'),
+                'jk_pasien' => $this->input->post('jk_pasien'),
+                'goldar_pasien' => $this->input->post('goldar_pasien'),
+                'pekerjaan_pasien' => $this->input->post('pekerjaan_pasien'),
+                'telp_pasien' => $this->input->post('telp_pasien'),
+            );
+            $this->M_Pasien->update($id_pasien, $data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Data Pasien berhasil diubah!</div>');
+            redirect('pasien/detail/'.$id_pasien);
+        }
     }
 
     public function delete_pasien_baru($id_Pasien){

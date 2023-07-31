@@ -18,4 +18,8 @@ class M_Pasien extends CI_Model {
     $this->db->where('id_pasien',$id_Pasien);
     $this->db->delete('tbpasien');
     }
+    public function update($id_Pasien, $data) {
+        $this->db->where('id_pasien', $id_Pasien);
+        $this->db->update('tbpasien', $data);
+    }
 }

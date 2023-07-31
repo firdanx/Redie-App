@@ -6,7 +6,7 @@
         <h6 class="m-0 font-weight-bold text-primary">Data Pasien</h6>
     </div>
     <div class="card-body">
-<form>
+<?= form_open('pasien/edit/'. $pasien->id_pasien)?>
 <div class="row">
     <div class="col">
         <div class="form-group mb-2">
@@ -64,9 +64,15 @@
         </div>
     </div>
 </div>
+<div class="card-footer text-right">
+    <a href="<?=base_url('pasien/pasien_'.lcfirst($pasien->tipe_pasien))?>" class="btn btn-danger mx-2">Batal</a>
+    <button type="submit" class="btn btn-primary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-save"></i>
+        </span>
+        <span class="text">Simpan</span>
+    </button>
+</div>
 </form>
-        <div class="card-footer text-right">
-            <a href="<?=base_url('pasien/pasien_'.lcfirst($pasien->tipe_pasien))?>" class="btn btn-primary">Kembali</a>
-        </div>
     </div>
 </div>
