@@ -48,6 +48,19 @@ class Pasien extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    public function edit($id_pasien){
+        $username = $this->session->userdata('username');
+        $data['title'] = 'Edit Pasien';
+        $data['username'] = $username;
+        $data['profile_pic'] = $this->M_Common->get_profile_pic($username);
+        $data['pasien']=$this->M_Pasien->get_pasien($id_pasien)->row();
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('templates/topbar');
+        $this->load->view('admins/pasien/edit');
+        $this->load->view('templates/footer');
+    }
+
     public function delete_pasien_baru($id_Pasien){
         $this->M_Pasien->delete($id_Pasien);
         redirect('pasien/pasien_baru');

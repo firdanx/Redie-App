@@ -31,7 +31,7 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="<?=base_url('pasien/detail/'.$pl['id_pasien']);?>">Detail</a>
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal<?= $pl['id_pasien'];?>">Edit</a>
+                                        <a class="dropdown-item" href="<?=base_url('pasien/edit/'.$pl['id_pasien']);?>">Edit</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#hapusModal<?= $pl['id_pasien'];?>">Hapus</a>
                                     </div>
                                 </div>

@@ -21,7 +21,7 @@
             </div>
             <div class="col">
                 <p>: <?=$pasien->no_rm?></p>
-                <p>: <?=$pasien->nik?></p>
+                <p>: <?=$pasien->nik_pasien?></p>
                 <p>: <?=$pasien->nama_pasien?></p>
                 <p>: <?=$pasien->alamat_pasien?></p>
                 <p>: <?=$pasien->tempat_lahir?></p>
