@@ -22,4 +22,7 @@ class M_Pasien extends CI_Model {
         $this->db->where('id_pasien', $id_Pasien);
         $this->db->update('tbpasien', $data);
     }
+    public function add($data){
+        $this->db->insert('tbpasien', $data);
+    }
 }
