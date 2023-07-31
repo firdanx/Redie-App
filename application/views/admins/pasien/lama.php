@@ -12,7 +12,8 @@
                     <tr>
                         <th>No RM</th>
                         <th>Nama</th>
-                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
+                        <th>No Telepon</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -20,14 +21,16 @@
                     <?php foreach ($pasien_lama as $pl) :?>
                         <tr>
                             <td class="text-center"><?= $pl['no_rm'];?></td>
-                            <td><?= $pl['nama_pasien'];?></td>
-                            <td class="text-center"><?= $pl['jk_pasien'];?></td>
+                            <td class="text-center"><?= $pl['nama_pasien'];?></td>
+                            <td class="text-center"><?= $pl['alamat_pasien'];?></td>
+                            <td class="text-center"><?= $pl['telp_pasien'];?></td>
                             <td class="text-center">
                                 <div class="btn-group dropleft">
                                     <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Menu
                                     </button>
                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="<?=base_url('pasien/detail/'.$pl['id_pasien']);?>">Detail</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editModal<?= $pl['id_pasien'];?>">Edit</a>
                                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#hapusModal<?= $pl['id_pasien'];?>">Hapus</a>
                                     </div>
