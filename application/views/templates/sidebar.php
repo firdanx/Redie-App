@@ -64,34 +64,15 @@
             <div class="sidebar-heading">
                Dokter & Poliklinik
             </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsdokter"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="<?=base_url('dokter')?>">
                     <i class="fas fa-fw fa-user-md"></i>
-                    <span>Dokter</span>
-                </a>
-                <div id="collapsdokter" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Kelola Dokter:</h6>
-                        <a class="collapse-item" href="<?=base_url('dokter')?>">Data Dokter</a>
-                    </div>
-                </div>
+                    <span>Data Dokter</span></a>
             </li>
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapspoliklinik"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link" href="<?=base_url('poliklinik')?>">
                     <i class="fas fa-fw fa-clinic-medical"></i>
-                    <span>Poliklinik</span>
-                </a>
-                <div id="collapspoliklinik" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Kelola Poliklinik:</h6>
-                        <a class="collapse-item" href="<?=base_url('poliklinik');?>">Data Poliklinik</a>
-                    </div>
-                </div>
+                    <span>Data Poliklinik</span></a>
             </li>
             <hr class="sidebar-divider">
 
