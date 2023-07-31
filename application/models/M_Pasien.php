@@ -25,4 +25,24 @@ class M_Pasien extends CI_Model {
     public function add($data){
         $this->db->insert('tbpasien', $data);
     }
+    public function is_nik_unique($id_pasien,$nik_pasien){
+        $this->db->where('id_pasien!=',$id_pasien);
+        $this->db->where('nik_pasien',$nik_pasien);
+        $query = $this->db->get('tbpasien');
+        if($query->num_rows() > 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public function is_telp_unique($id_pasien,$telp_pasien){
+        $this->db->where('id_pasien!=',$id_pasien);
+        $this->db->where('telp_pasien',$telp_pasien);
+        $query = $this->db->get('tbpasien');
+        if($query->num_rows() > 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
