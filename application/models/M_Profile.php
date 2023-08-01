@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_Settings extends CI_Model {
+class M_Profile extends CI_Model {
 	public function pass_check($username, $password){
 		$this->db->where('username',$username);
 		$query = $this->db->get('tbaccount')->row();
