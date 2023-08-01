@@ -13,15 +13,13 @@ class Settings extends CI_Controller {
 	public function index()
 	{
         $username = $this->session->userdata('username');
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Pengaturan';
         $data['username'] = $username;
-        $data['status'] = '';
-        $data['dp'] = 'none';
         $data['profile_pic'] = $this->M_Common->get_profile_pic($username);
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('admins/settings');
+        $this->load->view('admins/settings/menu');
         $this->load->view('templates/footer');
 	}
 
