@@ -19,3 +19,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             redirect('dashboard');
         } 
     }
+    function is_there()
+    {
+        $CI =& get_instance();
+        $username = $CI->session->userdata('username');
+        $CI->db->where('username', $username);
+        $query = $CI->db->get('tbaccount');
+        if($query->num_rows() < 1){
+            $CI->session->unset_userdata('username');
+            $CI->session->unset_userdata('logged_in');
+            redirect(base_url());
+        }
+    }
