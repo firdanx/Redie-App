@@ -8,6 +8,7 @@ class Dokter extends CI_Controller {
         parent::__construct();
         is_logged_in();
         is_there();
+        user_restricted();
         $this->load->model('M_Common');
         $this->load->model('M_Dokter');
         $this->load->model('M_Poliklinik');

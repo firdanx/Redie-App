@@ -79,7 +79,8 @@ class Auth extends CI_Controller {
 			$data = array(
 				'account_pic' => 'default.svg',
                 'username' => $username,
-                'password' => $password
+                'password' => $password,
+				'id_role' => 2
             );
 			$this->M_Auth->insert($data);
 			$this->session->set_flashdata('success', '<div class="alert alert-success mb-2 text-center" role="alert">Berhasil Mendaftar! Silahkan login.</div>');

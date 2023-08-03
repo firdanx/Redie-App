@@ -31,3 +31,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             redirect(base_url());
         }
     }
+    function user_restricted(){
+        $CI =& get_instance();
+        $username = $CI->session->userdata('username');
+        $CI->db->where('username', $username);
+        $query = $CI->db->get('tbaccount')->row();
+        if($query->id_role == 2){
+            $CI->session->unset_userdata('username');
+            $CI->session->unset_userdata('logged_in');
+            redirect(base_url());
+        }
+    }
