@@ -1,4 +1,5 @@
 <h1 class="h3 mb-2 text-gray-800">Profil</h1>
+<?=$this->session->flashdata('message');?>
 <div class="accordion" id="profilMenu">
     <div class="card">
         <div class="card-header">
@@ -19,7 +20,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-4 text-center">
-                                        <img src="<?=base_url('assets/profile/').$profile_pic?>" style="width: 200px;" class="img-thumbnail mb-2">
+                                        <img src="<?=base_url('assets/profile/').$profile_pic?>" style="width: 200px;height: 200px; object-fit:cover; border-radius:50%" class="img-thumbnail mb-2">
                                     </div>
                                     <div class="col-lg-4 text-center">
                                         <div class="form-group row">
@@ -34,6 +35,7 @@
                         </div>
                     </div>
                     <div id="editProfil" <?=($tab === 2)?'class="collapse show"' : 'class="collapse"'?> aria-labelledby="headingThree" data-parent="#profilMenu">
+                        <?=form_open_multipart('profile/editProfile')?>
                         <div class="card">
                             <div class="card-header">
                                 <h6 class="m-0 font-weight-bold text-primary">Edit Profil</h6>
@@ -41,19 +43,19 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-4 text-center">
-                                        <img src="<?=base_url('assets/profile/').$profile_pic?>" style="width: 200px;" class="img-thumbnail mb-2">
+                                        <img src="<?=base_url('assets/profile/').$profile_pic?>"  style="width: 200px;height: 200px; object-fit:cover; border-radius:50%" class="img-thumbnail mb-2">
                                         <div class="input-group">
                                             <div class="custom-file text-left">
-                                                <input type="file" class="custom-file-input" id="uploadProflie" aria-describedby="uploadProfile">
-                                                <label class="custom-file-label" for="uploadProflie">Choose file</label>
+                                                <input type="file" class="custom-file-input" id="image" aria-describedby="image" name="image">
+                                                <label class="custom-file-label" for="image">Choose file</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 text-center">
                                         <div class="form-group row">
-                                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Username</label>
+                                            <label for="username" class="col-sm-2 col-form-label col-form-label-sm">Username</label>
                                             <div class="col">
-                                            <input type="text" class="form-control form-control-sm" id="colFormLabelSm" value="<?=$username?>">
+                                            <input type="text" class="form-control form-control-sm" id="username" name="username" value="<?=$username?>">
                                             </div>
                                         </div>
                                     </div>
@@ -70,6 +72,7 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                     <div id="gantiPass" <?=($tab === 3)?'class="collapse show"' : 'class="collapse"'?> aria-labelledby="headingFour" data-parent="#profilMenu">
                         <?=form_open('profile/change_password')?>
@@ -77,7 +80,6 @@
                             <h5>Ganti Password</h5>
                         </div>
                             <div class="card align-items-center">
-                                <?=$this->session->flashdata('message');?>
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="oldPassword">Password Lama</label>

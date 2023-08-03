@@ -28,7 +28,7 @@ class Auth extends CI_Controller {
 				// cek password
 				if($this->M_Auth->pass_check($username, $password)){
 					$dataSession = array(
-						'username'  => $username,
+						'username'  => lcfirst($username),
 						'logged_in' => TRUE
 					);
 					$this->session->set_userdata($dataSession);
@@ -77,6 +77,7 @@ class Auth extends CI_Controller {
 			$username = $this->input->post('username');
 			$password = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 			$data = array(
+				'account_pic' => 'default.svg',
                 'username' => $username,
                 'password' => $password
             );

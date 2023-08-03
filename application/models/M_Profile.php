@@ -12,11 +12,30 @@ class M_Profile extends CI_Model {
         $query = $this->db->get('tbaccount')->row();
         return $query->id_account;
     }
+    public function get_profile($username){
+        $this->db->where('username',$username);
+        $query = $this->db->get('tbaccount')->row();
+        return $query;
+    }
     public function update_pass($id_account, $password){
         $data = array(
             'password' => password_hash($password, PASSWORD_DEFAULT)
         );
         $this->db->where('id_account', $id_account);
         $this->db->update('tbaccount', $data);
+    }
+    public function edit_profile($id_account, $data){
+        $this->db->where('id_account', $id_account);
+        $this->db->update('tbaccount', $data);
+    }
+    public function is_username_unique($id,$username){
+        $this->db->where('id_account!=',$id);
+        $this->db->where('username',$username);
+        $query = $this->db->get('tbaccount');
+        if($query->num_rows() > 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 }
