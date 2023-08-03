@@ -45,12 +45,12 @@
         </div>
     </div>
 
-<script type="application/javascript">
+<!-- <script type="application/javascript">
     $('input[type="file"]').change(function(e){
         var fileName = e.target.files[0].name;
         $('.custom-file-label').html(fileName);
     });
-</script>
+</script> -->
     <!-- Bootstrap core JavaScript-->
     <script src="<?=base_url('assets/sbadmin/vendor/jquery/jquery.min.js');?>"></script>
     <script src="<?=base_url('assets/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js');?>"></script>
